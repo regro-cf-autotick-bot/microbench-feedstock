@@ -1,33 +1,43 @@
 {% set name = "microbench" %}
-{% set version = "0.7" %}
+{% set version = "0.9" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/microbench-{{ version }}.tar.gz
-  sha256: cb9802f1d64fafd8072641119e10cc6374942449cb8be2c096c4b62595f3f6f2
+  url: https://github.com/alubbock/microbench/archive/v{{ version }}.tar.gz
+  sha256: 66c742d71560b2354c5d11c127ca6ffbea8f6d3e3d75fbaaf6aac80369c99b46
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   host:
-    - python >=2.6
+    - python >=2.6,<3.12
     - pip
+    - setuptools
   run:
-    - python >=2.6
+    - python >=2.6,<3.12
+    - setuptools
 
 test:
   imports:
     - microbench
   commands:
     - pip check
+    - ls
+    - pytest microbench/tests/
+  source_files:
+    - .
   requires:
     - pip
+    - pytest
+    - pandas
+    - line_profiler
+    - psutil 
 
 about:
   home: https://github.com/alubbock/microbench
