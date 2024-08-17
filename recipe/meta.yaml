@@ -1,5 +1,5 @@
 {% set name = "microbench" %}
-{% set version = "0.9" %}
+{% set version = "0.9.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/alubbock/microbench/archive/v{{ version }}.tar.gz
-  sha256: 66c742d71560b2354c5d11c127ca6ffbea8f6d3e3d75fbaaf6aac80369c99b46
+  sha256: fba16c30e5b49a9f807950f8243243897af3c7f5ce0bec9dd45391b503aa35f8
 
 build:
   noarch: python
@@ -16,11 +16,11 @@ build:
 
 requirements:
   host:
-    - python >=2.6
+    - python >=2.6,<3.12
     - pip
     - setuptools
   run:
-    - python >=2.6
+    - python >=2.6,<3.12
     - setuptools
 
 test:
@@ -37,7 +37,7 @@ test:
     - pytest
     - pandas
     - line_profiler
-    - psutil 
+    - psutil
 
 about:
   home: https://github.com/alubbock/microbench
