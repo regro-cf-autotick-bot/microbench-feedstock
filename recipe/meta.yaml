@@ -28,8 +28,12 @@ test:
     - microbench
   commands:
     - pip check
+    - pytest
   requires:
     - pip
+    - pytest
+    - pandas
+    - line_profiler
 
 about:
   home: https://github.com/alubbock/microbench
