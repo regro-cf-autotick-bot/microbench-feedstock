@@ -37,6 +37,7 @@ test:
     - pytest
     - pandas
     - line_profiler
+    - psutil 
 
 about:
   home: https://github.com/alubbock/microbench
