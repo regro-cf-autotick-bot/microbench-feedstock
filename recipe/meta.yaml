@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/alubbock/microbench/archive/v{{ version }}.tar.gz
-  sha256: dcd4e281543974864ca4bc6c1714beeb78939746f7d45b872640b6c08cce5f38
+  sha256: 66c742d71560b2354c5d11c127ca6ffbea8f6d3e3d75fbaaf6aac80369c99b46
 
 build:
   noarch: python
