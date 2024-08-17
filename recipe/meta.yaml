@@ -1,5 +1,5 @@
 {% set name = "microbench" %}
-{% set version = "0.7" %}
+{% set version = "0.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/microbench-{{ version }}.tar.gz
-  sha256: cb9802f1d64fafd8072641119e10cc6374942449cb8be2c096c4b62595f3f6f2
+  sha256: dcd4e281543974864ca4bc6c1714beeb78939746f7d45b872640b6c08cce5f38
 
 build:
   noarch: python
