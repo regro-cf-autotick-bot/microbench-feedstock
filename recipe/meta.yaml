@@ -28,7 +28,9 @@ test:
     - microbench
   commands:
     - pip check
-    - pytest
+    - pytest microbench/tests/
+  source_files:
+    - .
   requires:
     - pip
     - pytest
